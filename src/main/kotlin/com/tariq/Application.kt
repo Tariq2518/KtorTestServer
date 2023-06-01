@@ -7,6 +7,7 @@ import io.ktor.events.EventDefinition
 import io.ktor.http.*
 import io.ktor.serialization.kotlinx.json.*
 import io.ktor.server.application.*
+import io.ktor.server.http.content.*
 import io.ktor.server.plugins.callloging.*
 import io.ktor.server.plugins.contentnegotiation.*
 import io.ktor.server.request.*
@@ -26,7 +27,11 @@ fun Application.module() {
         json()
     }
     routing {
+        staticResources("/", "staticdata"){
+            default("tariqdev.html")
+        }
         get("/") {
+
             call.respondText("Hello World")
         }
 
