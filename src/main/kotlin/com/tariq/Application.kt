@@ -33,7 +33,7 @@ fun Application.module() {
             default("tariqdev.html")
         }
         get("/") {
-            call.respondText("Hello World")
+            call.respondText("Hello World23")
         }
 
         get("/users1/{username}") {
@@ -46,7 +46,7 @@ fun Application.module() {
             val header = call.request.headers["Connection"]
             if (username == "Tariq") {
                 call.response.header(name = "MyName", "Tariq")
-                call.respond(message = "Hello Tariq", status = HttpStatusCode.OK)
+                call.respond(message = "Hello Tariq How", status = HttpStatusCode.OK)
             }
             call.respondText("Good night! $username and please $header")
         }
